@@ -7,10 +7,10 @@
 | nickname           | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
-| LastName           | string | null: false               |
-| FirstName          | string | null: false               |
-| LastName_kana      | string | null: false               |
-| FirstName_kana     | string | null: false               |
+| lastName           | string | null: false               |
+| firstName          | string | null: false               |
+| lastName_kana      | string | null: false               |
+| firstName_kana     | string | null: false               |
 | birth              | date   | null: false               |
 
 ### Association
@@ -41,9 +41,6 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| card_info     | bigint     | null: false                    |
-| card_expiry   | smallint   | null: false                    |
-| security_code | smallint   | null: false                    |
 | item          | references | null: false, foreign_key: true | 
 | user          | references | null: false, foreign_key: true | 
 
