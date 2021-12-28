@@ -43,15 +43,15 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("First name can't be blank")
       end
-      it "first_nameは全角（漢字・ひらがな・カタカナ）でなければ登録できない" do
-        @user.first_name = "kana"
+      it 'first_nameは全角（漢字・ひらがな・カタカナ）でなければ登録できない' do
+        @user.first_name = 'kana'
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name is invalid")
+        expect(@user.errors.full_messages).to include('First name is invalid')
       end
-      it "last_nameは全角（漢字・ひらがな・カタカナ）でなければ登録できない" do
-        @user.last_name = "kana"
+      it 'last_nameは全角（漢字・ひらがな・カタカナ）でなければ登録できない' do
+        @user.last_name = 'kana'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name is invalid")
+        expect(@user.errors.full_messages).to include('Last name is invalid')
       end
       it 'last_name_kanaが空では登録できない' do
         @user.last_name_kana = ''
@@ -63,15 +63,15 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kana can't be blank")
       end
-      it "first_name_kanaのフリガナは全角（カタカナ）でなければ登録できない" do
-        @user.first_name_kana = "かな"
+      it 'first_name_kanaのフリガナは全角（カタカナ）でなければ登録できない' do
+        @user.first_name_kana = 'かな'
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name kana is invalid")
+        expect(@user.errors.full_messages).to include('First name kana is invalid')
       end
       it 'last_name_kanaのフリガナは全角（カタカナ）でなければ登録できない' do
         @user.last_name_kana = 'かな'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name kana is invalid")
+        expect(@user.errors.full_messages).to include('Last name kana is invalid')
       end
       it 'birthが空では登録できない' do
         @user.birth = ''
@@ -96,8 +96,8 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
-      it "passwordが半角英数字混合でなければ登録できない" do
-        @user.password = "aaaaaa"
+      it 'passwordが半角英数字混合でなければ登録できない' do
+        @user.password = 'aaaaaa'
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
