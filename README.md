@@ -30,7 +30,7 @@
 | area_id         | integer    | null: false                    | 
 | delivery_day_id | integer    | null: false                    |
 | price           | integer    | null: false                    |
-| user            | references | null: false, foreign_key: true |
+| user_id         | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -41,8 +41,8 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| item          | references | null: false, foreign_key: true | 
-| user          | references | null: false, foreign_key: true | 
+| item_id       | references | null: false, foreign_key: true | 
+| user_id       | references | null: false, foreign_key: true | 
 
 ### Association
 - belongs_to :user
