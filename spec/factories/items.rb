@@ -8,7 +8,7 @@ FactoryBot.define do
     area_id          { Faker::Number.between(from: 2, to: 48) }
     delivery_day_id  { Faker::Number.between(from: 2, to: 4) }
     price            { Faker::Number.between(from: 1, to: 9_999_999) }
-    # association :user
+    #association :user
 
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/maxresdefault.jpeg'), filename: 'maxresdefault.jpeg')
