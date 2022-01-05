@@ -14,8 +14,8 @@ class Item < ApplicationRecord
   validates :burden_id,       presence: true, numericality: { other_than: 1, message: "can't be blank" }
   validates :area_id,         presence: true, numericality: { other_than: 1, message: "can't be blank" }
   validates :delivery_day_id, presence: true, numericality: { other_than: 1, message: "can't be blank" }
-  validates :price,           presence: true, numericality: { with: /\A[0-9]+\z/, message: 'Half-width number', greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range'}
-  
+  validates :price,           presence: true,
+                              numericality: { with: /\A[0-9]+\z/, message: 'Half-width number', greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
 
   validates :image,           presence: true
 
