@@ -159,7 +159,7 @@
       <% end %>
       <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
 
-      <% if @item = nil %>
+      <% if @items.length == 0 %>
         <li class='list'>
           <%= link_to '#' do %>
           <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
