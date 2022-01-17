@@ -11,7 +11,7 @@ class PurchasesController < ApplicationController
     @purchase_address = PurchaseAddress.new(purchase_params)
     if @purchase_address.valid?
       pay_item
-      @purchase.save
+      @purchase_address.save
       redirect_to root_path
     else
       render :index
