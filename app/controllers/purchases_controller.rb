@@ -4,6 +4,7 @@ class PurchasesController < ApplicationController
   def index
     @item = Item.find(params[:item_id])
     @purchase_address = PurchaseAddress.new
+    redirect_to root_path if @item.purchase.present?
   end
 
   def create
