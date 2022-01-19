@@ -9,7 +9,8 @@ class PurchaseAddress
     validates :area_id,   numericality: { other_than: 1, message: "can't be blank" }
     validates :city
     validates :street
-    validates :phone_number, format: { with: /\A0[5789]0\d{4}\d{4}\z|\A0\d{2}\d{3}\d{4}\z/ , message: 'is invalid. Input only number' }
+    validates :phone_number,
+              format: { with: /\A0[5789]0\d{4}\d{4}\z|\A0\d{2}\d{3}\d{4}\z/, message: 'is invalid. Input only number' }
     validates :token
   end
 
