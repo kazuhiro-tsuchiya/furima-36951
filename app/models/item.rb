@@ -8,14 +8,16 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :item_name       
-    validates :item_explain    
+    validates :item_name
+    validates :item_explain
     validates :category_id,      numericality: { other_than: 1, message: "can't be blank" }
     validates :quality_id,       numericality: { other_than: 1, message: "can't be blank" }
     validates :burden_id,        numericality: { other_than: 1, message: "can't be blank" }
     validates :area_id,          numericality: { other_than: 1, message: "can't be blank" }
     validates :delivery_day_id,  numericality: { other_than: 1, message: "can't be blank" }
-    validates :price,            numericality: { with: /\A[0-9]+\z/, message: 'Half-width number', greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
+    validates :price,
+              numericality: { with: /\A[0-9]+\z/, message: 'Half-width number', greater_than_or_equal_to: 300,
+                              less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
     validates :image
   end
 

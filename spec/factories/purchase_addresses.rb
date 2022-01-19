@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :purchase_address do
-    token         { 'tok_abcdefghijk00000000000000000'}
+    token         { 'tok_abcdefghijk00000000000000000' }
     post_code     { '123-4567' }
     area_id       { Faker::Number.between(from: 2, to: 48) }
     city          { '港区' }
